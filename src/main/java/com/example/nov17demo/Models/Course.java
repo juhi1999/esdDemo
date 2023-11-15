@@ -31,7 +31,6 @@ public class Course {
     @Column(name="credits")
     private Integer credits;
 
-    @JsonBackReference
 
     @ManyToMany
     @JoinTable(

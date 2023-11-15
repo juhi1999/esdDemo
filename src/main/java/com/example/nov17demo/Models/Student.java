@@ -42,4 +42,9 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name="course_id")
     )
     private List<Course> courses;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
 }
