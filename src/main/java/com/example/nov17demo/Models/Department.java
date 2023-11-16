@@ -26,8 +26,8 @@ public class Department {
     @Column(name="department_name")
     private String dname;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "department",fetch=FetchType.LAZY , cascade = CascadeType.REMOVE)
+    //@JsonManagedReference
+    @OneToMany(mappedBy = "department",fetch=FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
 
     private List<Student> students;

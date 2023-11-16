@@ -43,7 +43,7 @@ public class Student {
     )
     private List<Course> courses;
 
-    @JsonBackReference
+    //@JsonBackReference
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
