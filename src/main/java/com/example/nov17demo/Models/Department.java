@@ -27,7 +27,7 @@ public class Department {
     private String dname;
 
     //@JsonManagedReference
-    @OneToMany(mappedBy = "department",fetch=FetchType.LAZY,
+    @OneToMany(mappedBy = "department",
     cascade={CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.PERSIST})
     private List<Student> students;
 

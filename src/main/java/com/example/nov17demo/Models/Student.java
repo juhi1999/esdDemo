@@ -35,7 +35,11 @@ public class Student {
     private String contact;
 
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,CascadeType.PERSIST,
+            CascadeType.REFRESH
+    })
     @JoinTable(
             name="course_student",
             joinColumns = @JoinColumn(name="student_id"),

@@ -32,7 +32,8 @@ public class Course {
     private Integer credits;
 
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,
+    CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     @JoinTable(
             name="course_student",
             joinColumns = @JoinColumn(name="course_id"),
