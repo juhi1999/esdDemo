@@ -44,7 +44,8 @@ public class Student {
     private List<Course> courses;
 
     //@JsonBackReference
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.LAZY,cascade={CascadeType.PERSIST,
+    CascadeType.MERGE,CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "department_id")
     private Department department;
 }
